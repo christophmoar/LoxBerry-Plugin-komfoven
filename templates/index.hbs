@@ -1,0 +1,132 @@
+<style>
+  .hello {
+    display: flex;
+    column-gap: 2rem;
+	  align-items: stretch;
+  }
+  .hello > * {
+    flex-direction: row;
+    margin: 0;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  
+  .divTable{
+      display: table;
+      width: 100%;
+  }
+  .divTableRow {
+      display: table-row;
+  }
+  .divTableHeading {
+      background-color: #EEE;
+      display: table-header-group;
+  }
+  .divTableCell, .divTableHead {
+      border: 0px dotted #999999;
+      display: table-cell;
+      padding: 3px 10px;
+      vertical-align: middle;
+  }
+  .divTableBody {
+      display: table-row-group;
+  }
+</style>
+
+<div class="hello">
+  <img src='{{pluginpath}}/assets/icon_64.png' />
+  <h1>{{pluginData.title}}</h1>
+</div>
+
+<div>
+<h2>{{t 'welcome' name=title}}</h2>
+<p></p>
+<form method="post" data-ajax="false" enctype="multipart/form-data" action="{{pluginpath}}">
+        <div class="divTable">
+            <div class="divTableBody">
+                <div class="divTableRow">
+                    <div class="divTableCell"><h3>{{t 'komfovent_settings'}}</h3></div>
+                </div>
+                <div class="divTableRow">
+                  <div class="divTableCell" style="width:25%">{{t 'server'}}</div>
+                  <div class="divTableCell"><input type="text" name="komfovent_server" id="komfovent_server" value="{{config.KOMFOVENT.SERVER}}"></div>
+                  <div class="divTableCell" style="width:25%"><span class="hint">&nbsp;</span></div>
+                </div>
+                <div class="divTableRow">
+                  <div class="divTableCell" style="width:25%">{{t 'username'}}</div>
+                  <div class="divTableCell"><input type="text" name="komfovent_username" id="komfovent_username" value="{{config.KOMFOVENT.USERNAME}}"></div>
+                  <div class="divTableCell" style="width:25%"><span class="hint">&nbsp;</span></div>
+                </div>
+                <div class="divTableRow">
+                  <div class="divTableCell">{{t 'password'}}</div>
+                  <div class="divTableCell"><input type="password" name="komfovent_password" id="komfovent_password" value="{{config.KOMFOVENT.PASSWORD}}"></div>
+                  <div class="divTableCell"></div>
+                </div>
+                <br>
+                
+                <div class="divTableRow">
+                  <div class="divTableCell"><h3>{{t 'miniserver_settings'}}</h3></div>
+                </div>
+                <div class="divTableRow">
+                  <div class="divTableCell">{{t 'port'}}</div>
+                  <div class="divTableCell"><input type="number" name="miniserver_port" id="miniserver_port" min="1025" max="65535" value="{{config.MINISERVER.PORT}}" data-validation-rule="special:number-min-max-value:1025:65535"></div>
+                  <div class="divTableCell"></div>
+                </div>
+                <br>
+                
+                <div class="divTableRow">
+                    <div class="divTableCell"><h3>{{t 'influxdb_settings'}}</h3></div>
+                </div>
+                <div class="divTableRow">
+                  <div class="divTableCell" style="width:25%">{{t 'database'}}</div>
+                  <div class="divTableCell"><input type="text" name="influxdb_database" id="influxdb_database" value="{{config.INFLUXDB.DATABASE}}"></div>
+                  <div class="divTableCell" style="width:25%"><span class="hint">&nbsp;</span></div>
+                </div>
+                <div class="divTableRow">
+                  <div class="divTableCell" style="width:25%">{{t 'measurement'}}</div>
+                  <div class="divTableCell"><input type="text" name="influxdb_measurement" id="influxdb_measurement" value="{{config.INFLUXDB.MEASUREMENT}}"></div>
+                  <div class="divTableCell" style="width:25%"><span class="hint">&nbsp;</span></div>
+                </div>
+                <div class="divTableRow">
+                  <div class="divTableCell" style="width:25%">{{t 'server'}}</div>
+                  <div class="divTableCell"><input type="text" name="influxdb_server" id="influxdb_server" value="{{config.INFLUXDB.SERVER}}"></div>
+                  <div class="divTableCell" style="width:25%"><span class="hint">&nbsp;</span></div>
+                </div>
+                <div class="divTableRow">
+                  <div class="divTableCell" style="width:25%">{{t 'port'}}</div>
+                  <div class="divTableCell"><input type="text" name="influxdb_port" id="influxdb_port" min="1025" max="65535" value="{{config.INFLUXDB.PORT}}" data-validation-rule="special:number-min-max-value:1025:65535"></div>
+                  <div class="divTableCell" style="width:25%"><span class="hint">&nbsp;</span></div>
+                </div>
+                <div class="divTableRow">
+                  <div class="divTableCell" style="width:25%">{{t 'username'}}</div>
+                  <div class="divTableCell"><input type="text" name="influxdb_username" id="influxdb_username" value="{{config.INFLUXDB.USERNAME}}"></div>
+                  <div class="divTableCell" style="width:25%"><span class="hint">&nbsp;</span></div>
+                </div>
+                <div class="divTableRow">
+                  <div class="divTableCell" style="width:25%">{{t 'password'}}</div>
+                  <div class="divTableCell"><input type="password" name="influxdb_password" id="influxdb_password" value="{{config.INFLUXDB.PASSWORD}}"></div>
+                  <div class="divTableCell" style="width:25%"><span class="hint">&nbsp;</span></div>
+                </div>
+                <br>
+                
+                <div class="divTableRow">
+                  <div class="divTableCell">&nbsp;</div>
+                  <div class="divTableCell"><input type="submit" id="do" value="{{t 'save'}}" data-mini="true"></div>
+                </div>
+                <br>
+                
+            </div>
+        </div>
+</form>
+</div>
+
+<script>
+$('#main_form').validate();
+
+$( document ).ready(function()
+{
+    validate_enable('#ms_port');
+});
+</script>
+
