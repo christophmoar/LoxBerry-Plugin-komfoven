@@ -124,6 +124,11 @@ You can display whatever values are relevant for you, the following example show
 
 ![image](https://user-images.githubusercontent.com/62471240/227453872-b2947e14-7826-46fb-adb4-49282b07d3a6.png)
 
+## Info and debug logging
+You can enable info and debug logging to see what the plugin is processing in the Express Server Logging section
+
+![image](https://user-images.githubusercontent.com/62471240/227455099-c3ddc1c8-bb9c-4469-a980-be6177390b45.png)
+
 
 <!-- LICENSE -->
 ## License
