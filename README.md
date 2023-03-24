@@ -98,8 +98,28 @@ The following screenshot shows some of the aggregated data displayed in a grafan
 ![image](https://user-images.githubusercontent.com/62471240/225679930-cc5b9c65-a4d5-412e-9dc7-19d68542c32c.png)
 
 ## Setup in the Loxone Config Software
-* Create a "Virtual UDP Input"
-* Create one or more "Virtual UDP Input Commands" to parse the relevant values for your application
+* Create a "Virtual UDP Input" and one or more "Virtual UDP Input Commands"
+![image](https://user-images.githubusercontent.com/62471240/227454322-5e3fe2c9-66a9-4266-b629-e42b4ceba469.png)
+
+* Configure the "Virtual UDP Input Commands" to parse the relevant values for your application
+![image](https://user-images.githubusercontent.com/62471240/227454508-3395116f-d693-4302-b183-1205362433c2.png)
+
+* Setup status icons to display in the loxone app
+![image](https://user-images.githubusercontent.com/62471240/227454101-15edb4db-bb7e-4962-9cc3-0f340c92c825.png)
+
+* If you want to map status ids to textual representations, you can configure the status component of loxone as here
+![image](https://user-images.githubusercontent.com/62471240/227454227-a47ff1f5-4cbe-4498-a237-0ee94a5b28bb.png)
+
+
+## Example Output in Loxone
+You can display whatever values are relevant for you, the following example shows 
+* the fan_mode_id converted to a textual/graphical icon (Lüftung Mode)
+* the filter clogging status (Lüftung Filter)
+* the status of the eco mode (on/off)
+* the status of the auto mode (on/off)
+
+![image](https://user-images.githubusercontent.com/62471240/227453872-b2947e14-7826-46fb-adb4-49282b07d3a6.png)
+
 
 <!-- LICENSE -->
 ## License
